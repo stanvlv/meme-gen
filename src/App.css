@@ -1,0 +1,8 @@
+.div-meme {
+  max-height: 100px;
+  max-width: 100px;
+}
+img {
+  max-width: 550px;
+  max-height: auto;
+}

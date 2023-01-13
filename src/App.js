@@ -2,9 +2,6 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-
-
-
 function App() {
 
   const [memes, setMemes] = useState([])
@@ -24,10 +21,6 @@ function App() {
     .catch(error => console.log(error))
   }, [])
 
-  const search = () => {
-    
-  }
-  console.log(memes)
   //console.log(memes[0].id)
   const previousImage = () => {
     if(memeIndex === 0) return memeIndex

@@ -27,8 +27,8 @@ function App() {
    if(memeIndex > 0) {setMemeIndex(memeIndex - 1)}
   }
   const nextImage = () => {
-    if(memeIndex === 100) return memeIndex
-    if(memeIndex < 100) {setMemeIndex(memeIndex + 1)}
+    if(memeIndex === memes.length - 1) return memeIndex
+    if(memeIndex < memes.length - 1) {setMemeIndex(memeIndex + 1)}
   }
   const addText = () => {
     axios
@@ -41,29 +41,29 @@ function App() {
 console.log(memes)
 
   return ( <>
-    <div>
-      <div>{isLoading ? (<div>{memes.filter((meme, index) => {
+  <nav className='navigation-bar'><h1>React training - meme generator</h1></nav>
+    <div className='main-div'>
+      <div>{isLoading ? (<div className='image'>{memes.filter((meme, index) => {
         return index === memeIndex
       }).map((meme) =>  {
         return (
           <>
         <img src={meme.url} alt={meme.name} />
         </>)})}
-        {/* <img src={memes[0].url} alt={memes[0].name} key={memes.id}/> */}
         </div>) 
         : <h2>Fetching data</h2>}</div>
       <br></br>
-      <button onClick={previousImage}>Previous Image</button>
-      <button onClick={nextImage}>Next Image</button>
+      <button className='button' onClick={previousImage}>Previous Image</button>
+      <button className='button' onClick={nextImage}>Next Image</button>
       <br></br>
-      <form onSubmit={e => e.preventDefault()}>
+      <form className='form' onSubmit={e => e.preventDefault()}>
       <input placeholder='top text' onChange={e => setTopText(e.target.value)} />
       <input placeholder='bottom text'onChange={e => setBottomText(e.target.value)} />
-      <button onClick={addText}>Add Text</button>
+      <button className='button' onClick={addText}>Add Text</button>
       </form>
     </div>
     <h3>That's your creation:</h3>
-    <div><img src={finishedMeme} alt='finished meme' /></div>
+    <div><img src={finishedMeme} alt='Your finished meme:' /></div>
     </> )
 }
 

@@ -1,8 +1,49 @@
-.div-meme {
-  max-height: 100px;
-  max-width: 100px;
+body {
+  display: grid;
 }
-img {
-  max-width: 550px;
-  max-height: auto;
+.image { 
+  
+  border: 2px solid black;
+  align-items: center;
+  width: 450px;
+  justify-items: center;
+}
+.image img {
+  align-self: center;
+  width: auto;
+  height: 450px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 5%;
+  background-color: rgb(95, 157, 250);
+  border: none;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 5px 5px;
+  transition-duration: 0.5s;
+}
+.button:hover {
+  background-color: rgb(51, 123, 231);
+  cursor: pointer;
+}
+
+.image {
+  /* max-width: auto;
+  max-height: 150px; */
+}
+
+.main-div {
+  justify-content: center;
+}
+
+.form input {
+  border-color: rgb(95, 157, 250);
+  margin: 10px 10px;
+  padding: 10px 15px;
+}
+.form input:focus {
+  border-color: rgb(51, 123, 231);
 }
